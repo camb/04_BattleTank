@@ -3,6 +3,18 @@
 #include "BattleTank.h"
 #include "TankPlayerController.h"
 
+
+// Called every frame
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	//AimTowardsCrosshair();
+	UE_LOG(LogTemp, Warning, TEXT("Ticking ATankPlayerController!"));
+
+}
+
+
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -23,4 +35,13 @@ void ATankPlayerController::BeginPlay()
 ATank* ATankPlayerController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
+}
+
+void ATankPlayerController::AimTowardsCrosshair()
+{
+	if (!GetControlledTank()) { return; }
+
+	// Get world location through crosshair
+	// If it hits the landscape
+		// Tell controlled tank to aim at point
 }

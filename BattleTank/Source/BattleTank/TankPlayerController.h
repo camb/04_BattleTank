@@ -25,4 +25,7 @@ private:
 	// Start moving the tank barrel to crosshair
 	void ATankPlayerController::AimTowardsCrosshair();
 
+	// return out parameter, true if hit landscape
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
+
 };

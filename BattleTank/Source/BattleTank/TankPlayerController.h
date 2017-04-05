@@ -21,7 +21,12 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
-private:
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = .5;
+
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = .3333;
+
 	// Start moving the tank barrel to crosshair
 	void ATankPlayerController::AimTowardsCrosshair();
 

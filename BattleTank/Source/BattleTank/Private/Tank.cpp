@@ -33,3 +33,8 @@ void ATank::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 
 }
 
+void ATank::AimAt(FVector Target)
+{
+	auto CurTankName = GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s aiming at target: %s"), *CurTankName, *Target.ToString());
+}
